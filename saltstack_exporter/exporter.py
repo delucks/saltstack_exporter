@@ -163,7 +163,7 @@ def main():
     ])
     app.listen(args.listen_port, args.listen_addr)
 
-    print 'Serving metrics on {}:{}'.format(args.listen_addr, args.listen_port)
+    print('Serving metrics on {}:{}'.format(args.listen_addr, args.listen_port))
     ioloop.IOLoop.current().start()
 
 
