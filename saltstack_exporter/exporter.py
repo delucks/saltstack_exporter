@@ -91,13 +91,13 @@ class SaltHighstateCollector(object):
         yield self.states_total(len(self.statedata))
 
         nonhigh = filter(
-            lambda (id, state): state['result'] is None,
+            lambda id, state: state['result'] is None,
             self.statedata.iteritems()
         )
         yield self.states_nonhigh(len(nonhigh))
 
         error = filter(
-            lambda (id, state): state['result'] is False,
+            lambda id, state: state['result'] is False,
             self.statedata.iteritems()
         )
         yield self.states_error(len(error))
